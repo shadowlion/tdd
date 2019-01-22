@@ -36,7 +36,7 @@
 export default {
   data () {
     return {
-      videoId: 'USvuD3L0euE',
+      videoId: 'UiV8FPwUChk',
       vidWidth: null,
       vidHeight: null
     }
