@@ -9,18 +9,21 @@
     </v-content>
 
     <bottom-nav />
+    <main-footer />
   </v-app>
 </template>
 
 <script>
 import Navigation from './components/Navigation'
 import BottomNav from './components/BottomNav'
+import MainFooter from './components/MainFooter'
 
 export default {
   name: 'App',
   components: {
     Navigation,
-    BottomNav
+    BottomNav,
+    MainFooter
   }
 }
 </script>
