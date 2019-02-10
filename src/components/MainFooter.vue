@@ -39,8 +39,8 @@ export default {
     return {
       links: [
         { route: 'Home', url: '/' },
-        { route: 'Officials', url: '/officials' },
         { route: 'Registration', url: '/registration' },
+        { route: 'Officials', url: '/officials' },
         { route: 'Rules', url: '/rules' },
         { route: 'Contact Us', url: '/contact-us' }
       ]

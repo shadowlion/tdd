@@ -1,7 +1,7 @@
 <template>
   <section>
     <v-toolbar app fixed clipped-left color="primary" dark>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-side-icon @click.stop="toggleDrawer" />
       <v-toolbar-title>Three Diamond Dancesport</v-toolbar-title>
       <v-spacer />
       <v-toolbar-side-icon
@@ -26,12 +26,15 @@
 
       <v-list class="pt-0">
         <v-divider light class="hidden-sm-and-up" />
-        <v-list-tile to="/">
+        <v-list-tile
+          v-for="link in navLinks"
+          :key="link.id"
+          :to="link.url">
           <v-list-tile-action>
-            <v-icon>home</v-icon>
+            <v-icon>{{ link.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
+            <v-list-tile-title>{{ link.title }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -41,8 +44,22 @@
 
 <script>
 export default {
-  data: () => ({
-    drawer: false
-  })
+  data () {
+    return {
+      drawer: false,
+      navLinks: [
+        { title: 'Home', icon: 'home', url: '/' },
+        { title: 'Registration', icon: 'how_to_vote', url: '/registration' },
+        { title: 'Officials', icon: 'people', url: '/officials' },
+        { title: 'Rules', icon: 'assignment', url: '/rules' },
+        { title: 'Contact Us', icon: 'contact_mail', url: '/contact-us' }
+      ]
+    }
+  },
+  methods: {
+    toggleDrawer () {
+      this.drawer = !this.drawer
+    }
+  }
 }
 </script>
