@@ -2,7 +2,7 @@
   <v-container grid-list-md text-xs-center>
     <v-layout row wrap>
       <v-flex v-for="item in docsList" :key="item.id" xs12 sm6 md4>
-        <v-card dark color="primary">
+        <v-card dark :color="tag(item.tag)">
           <v-card-title primary-title>
             <div>
               <div class="headline">{{ item.name }}</div>
@@ -12,8 +12,8 @@
             <v-btn flat dark target="_blank" :href="item.url">View Pdf</v-btn>
             <v-spacer />
             <div class="text-xs-center">
-              <v-chip text-color="white" color="info">
-                <v-avatar class="info darken-4"><v-icon>star</v-icon></v-avatar>
+              <v-chip text-color="white" :color="tag(item.tag)" class="darken-2">
+                <v-avatar :class="tag(item.tag)" class="darken-4"><v-icon>star</v-icon></v-avatar>
                 {{ item.tag }}
               </v-chip>
             </div>
@@ -32,6 +32,17 @@ export default {
   data () {
     return {
       docsList: []
+    }
+  },
+  methods: {
+    tag (tag) {
+      if (tag === 'Pro-Am') {
+        return 'primary'
+      } else if (tag === 'Am-Am') {
+        return 'warning'
+      } else if (tag === 'Mixed-Am') {
+        return 'danger'
+      }
     }
   },
   async created () {
