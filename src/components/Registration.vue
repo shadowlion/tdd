@@ -36,12 +36,13 @@ export default {
   },
   methods: {
     tag (tag) {
-      if (tag === 'Pro-Am') {
-        return 'primary'
-      } else if (tag === 'Am-Am') {
-        return 'warning'
-      } else if (tag === 'Mixed-Am') {
-        return 'danger'
+      switch (tag) {
+        case 'Pro-Am':
+          return 'primary'
+        case 'Am-Am':
+          return 'warning'
+        case 'Mixed-Am':
+          return 'danger'
       }
     }
   },
