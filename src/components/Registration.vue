@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-md text-xs-center>
+  <v-container grid-list-lg text-xs-center>
     <v-layout row wrap>
       <v-flex v-for="item in docsList" :key="item.id" xs12 sm6 md4>
         <v-card dark :color="tag(item.tag)">
@@ -42,7 +42,11 @@ export default {
         case 'Am-Am':
           return 'warning'
         case 'Mixed-Am':
-          return 'danger'
+          return 'green'
+        case 'All':
+          return 'purple'
+        case 'Required':
+          return 'red'
       }
     }
   },
