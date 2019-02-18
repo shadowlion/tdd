@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-xl text-xs-center>
+  <v-container fluid grid-list-xl text-xs-center>
     <v-layout row wrap>
       <v-flex xs12>
         <p>Find the forms you need to register below:</p>
@@ -8,16 +8,18 @@
     <v-layout row wrap>
       <v-flex xs12 sm10 offset-sm1 md8 offset-md2>
         <v-data-table
-          :header="headers"
+          :headers="headers"
           :items="docsList"
-          class="elevation-1"
+          class="elevation-2"
           hide-actions
         >
           <template slot="items" slot-scope="props">
             <td class="text-xs-left">{{ props.item.name }}</td>
-            <td class="text-xs-right">{{ props.item.tag }}</td>
-            <td class="text-xs-right">
-              <a :href="props.item.url" target="_blank">Download</a>
+            <td class="text-xs-left">{{ props.item.tag }}</td>
+            <td class="text-xs-left">
+              <v-btn small flat fab color="primary" :href="props.item.url" target="_blank">
+                <v-icon>cloud_download</v-icon>
+              </v-btn>
             </td>
           </template>
         </v-data-table>
@@ -35,9 +37,9 @@ export default {
     return {
       docsList: [],
       headers: [
-        { text: 'name', value: '' },
-        { text: 'tag', value: '' },
-        { text: 'download', value: '' }
+        { text: 'name', value: 'name', sortable: true },
+        { text: 'tag', value: 'tag', sortable: true },
+        { text: 'download', value: 'url', sortable: false }
       ]
     }
   },
