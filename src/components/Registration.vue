@@ -1,24 +1,26 @@
 <template>
-  <v-container grid-list-lg text-xs-center>
+  <v-container grid-list-xl text-xs-center>
     <v-layout row wrap>
-      <v-flex v-for="item in docsList" :key="item.id" xs12 sm6 md4>
-        <v-card dark :color="tag(item.tag)">
-          <v-card-title primary-title>
-            <div>
-              <div class="headline">{{ item.name }}</div>
-            </div>
-          </v-card-title>
-          <v-card-actions>
-            <v-btn flat dark target="_blank" :href="item.url">View Pdf</v-btn>
-            <v-spacer />
-            <div class="text-xs-center">
-              <v-chip text-color="white" :color="tag(item.tag)" class="darken-2">
-                <v-avatar :class="tag(item.tag)" class="darken-4"><v-icon>star</v-icon></v-avatar>
-                {{ item.tag }}
-              </v-chip>
-            </div>
-          </v-card-actions>
-        </v-card>
+      <v-flex xs12>
+        <p>Find the forms you need to register below:</p>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap>
+      <v-flex xs12 sm10 offset-sm1 md8 offset-md2>
+        <v-data-table
+          :header="headers"
+          :items="docsList"
+          class="elevation-1"
+          hide-actions
+        >
+          <template slot="items" slot-scope="props">
+            <td class="text-xs-left">{{ props.item.name }}</td>
+            <td class="text-xs-right">{{ props.item.tag }}</td>
+            <td class="text-xs-right">
+              <a :href="props.item.url" target="_blank">Download</a>
+            </td>
+          </template>
+        </v-data-table>
       </v-flex>
     </v-layout>
   </v-container>
@@ -31,7 +33,12 @@ import 'firebase/firestore'
 export default {
   data () {
     return {
-      docsList: []
+      docsList: [],
+      headers: [
+        { text: 'name', value: '' },
+        { text: 'tag', value: '' },
+        { text: 'download', value: '' }
+      ]
     }
   },
   methods: {
