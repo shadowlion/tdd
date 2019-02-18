@@ -5,7 +5,7 @@
       <v-container v-bind="{ [`grid-list-${size}`]: true }" fluid>
         <v-layout row wrap>
           <v-flex
-            v-for="(official, index) in officials.length"
+            v-for="(official, index) in officials"
             :key="index"
             xs12 sm6 md4
           >
@@ -13,7 +13,7 @@
               <v-hover>
                 <v-img
                   slot-scope="{ hover }"
-                  :src="require(`@/assets/officials/${index}.jpg`)"
+                  :src="official.url"
                   height="250px"
                 >
                   <v-expand-transition>
@@ -23,9 +23,9 @@
                       style="height: 100%;"
                     >
                       <span class="hover-text">
-                        {{ officials[index].name }}<br>
-                        {{ officials[index].role }}<br>
-                        <v-icon>location_on</v-icon> {{ officials[index].state }}
+                        {{ official.name }}<br>
+                        {{ official.role }}<br>
+                        <v-icon>location_on</v-icon> {{ official.state }}
                       </span>
                       <!-- <span class="hover-text">$14.99</span> -->
                     </div>
@@ -41,22 +41,23 @@
 </template>
 
 <script>
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+
 export default {
   data () {
     return {
       size: 'sm',
-      officials: [
-        { name: 'Terry Sweeney', role: 'Master of Ceremony', state: 'PA' },
-        { name: 'Sam Sodano', role: 'Chairman of Judges', state: 'OH' },
-        { name: 'Andrea Ringgold', role: 'Registrar', state: 'MD' },
-        { name: 'Kate Crook', role: 'Scrutineer', state: 'FL' },
-        { name: 'David Innis', role: 'Music Director', state: 'CT' },
-        { name: 'Bill Sparks', role: 'Adjudicator', state: 'OH' },
-        { name: 'Carlos Pabon', role: 'Adjudicator', state: 'MD' },
-        { name: 'Jolan Sniegocki', role: 'Adjudicator', state: 'ON' },
-        { name: 'Nancy Brown', role: 'Adjudicator', state: 'NY' }
-      ]
+      officials: []
     }
+  },
+  async created () {
+    const officialsFolder = await firebase.firestore().collection('officials')
+      .where('year', '==', new Date().getFullYear())
+      .get()
+    officialsFolder.forEach(el => {
+      this.officials.push(el.data())
+    })
   }
 }
 </script>
