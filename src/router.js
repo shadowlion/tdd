@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './components/Home'
 import Registration from './components/Registration'
 import Officials from './components/Officials'
+import Rules from './components/Rules'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/officials',
       name: 'officials',
       component: Officials
+    },
+    {
+      path: '/rules',
+      name: 'rules',
+      component: Rules
     }
   ]
 })
