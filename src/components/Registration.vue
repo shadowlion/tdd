@@ -43,22 +43,6 @@ export default {
       ]
     }
   },
-  methods: {
-    tag (tag) {
-      switch (tag) {
-        case 'Pro-Am':
-          return 'primary'
-        case 'Am-Am':
-          return 'warning'
-        case 'Mixed-Am':
-          return 'green'
-        case 'All':
-          return 'purple'
-        case 'Required':
-          return 'red'
-      }
-    }
-  },
   async created () {
     const regFolder = await firebase.firestore().collection('docs')
       .where('year', '==', new Date().getFullYear())
