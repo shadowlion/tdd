@@ -27,7 +27,10 @@
         white--text
         xs12
       >
-        &copy;{{ year }} — <strong>Three Diamond Dancesport</strong>
+        &copy;{{ year }} |
+        <strong>Three Diamond Dancesport</strong> |
+        <a href="mailto:info@threediamonddancesport.com">info@threediamonddancesport.com</a> |
+        <a href="tel:4124187462">(412) 418-7462</a>
       </v-flex>
     </v-layout>
   </v-footer>
@@ -41,8 +44,7 @@ export default {
         { route: 'Home', url: '/' },
         { route: 'Registration', url: '/registration' },
         { route: 'Officials', url: '/officials' },
-        { route: 'Rules', url: '/rules' },
-        { route: 'Contact Us', url: '/contact-us' }
+        { route: 'Rules', url: '/rules' }
       ]
     }
   },

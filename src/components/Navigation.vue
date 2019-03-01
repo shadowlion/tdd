@@ -51,8 +51,7 @@ export default {
         { title: 'Home', icon: 'home', url: '/' },
         { title: 'Registration', icon: 'how_to_vote', url: '/registration' },
         { title: 'Officials', icon: 'people', url: '/officials' },
-        { title: 'Rules', icon: 'assignment', url: '/rules' },
-        { title: 'Contact Us', icon: 'contact_mail', url: '/contact-us' }
+        { title: 'Rules', icon: 'assignment', url: '/rules' }
       ]
     }
   },
