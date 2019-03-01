@@ -3,7 +3,7 @@
     <navigation />
 
     <v-content>
-      <v-container fluid>
+      <v-container fluid text-xs-center>
         <router-view />
       </v-container>
     </v-content>

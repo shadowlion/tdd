@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid grid-list-xl text-xs-center>
+  <div>
     <v-layout row wrap>
       <v-flex xs12>
         <p>Find the forms you need to register below:</p>
@@ -25,7 +25,7 @@
         </v-data-table>
       </v-flex>
     </v-layout>
-  </v-container>
+  </div>
 </template>
 
 <script>
