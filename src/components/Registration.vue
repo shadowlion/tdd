@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div text-xs-center>
     <v-layout row wrap>
       <v-flex xs12>
-        <p>Find the forms you need to register below:</p>
+        <p>Find the forms you need to register below. Please note that you must also fill out the <b>Required</b> forms according to our <a href="/rules">Rules and Policies</a> page.</p>
       </v-flex>
     </v-layout>
     <v-layout row wrap>
