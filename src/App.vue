@@ -27,3 +27,11 @@ export default {
   }
 }
 </script>
+
+<style>
+@media screen and (max-width: 450px) {
+  body {
+    padding-bottom: 56px;
+  }
+}
+</style>
