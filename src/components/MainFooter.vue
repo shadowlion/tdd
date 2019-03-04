@@ -29,8 +29,8 @@
       >
         &copy;{{ year }} |
         <strong>Three Diamond Dancesport</strong> |
-        <a href="mailto:info@threediamonddancesport.com">info@threediamonddancesport.com</a> |
-        <a href="tel:4124187462">(412) 418-7462</a>
+        <a style="color:white" href="mailto:info@threediamonddancesport.com">info@threediamonddancesport.com</a> |
+        <a style="color:white" href="tel:4124187462">(412) 418-7462</a>
       </v-flex>
     </v-layout>
   </v-footer>
@@ -55,3 +55,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.white {
+  color: white;
+}
+</style>
