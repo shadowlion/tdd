@@ -5,19 +5,27 @@
   >
     <v-flex xs12>
       <v-img
-        :src="require('../assets/logo.jpg')"
+        :src="require('../assets/logo.png')"
         class="my-3"
         contain
-        height="200"
+        height="80vh"
       />
     </v-flex>
 
     <v-flex xs12>
-      <youtube
+      <!-- <iframe
+        width="vidWidth"
+        height="vidHeight"
+        :src="`https://www.youtube.com/embed/${videoId}`"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      /> -->
+      <!-- <youtube
         :video-id="videoId"
         :player-width="vidWidth"
         :player-height="vidHeight"
-      />
+      /> -->
     </v-flex>
 
     <v-flex mb-4>
@@ -28,6 +36,84 @@
         We cordially invite you to the 7th annual Three Diamond Dancesport competition.
       </p>
       <v-btn color="primary" dark large>Register</v-btn>
+      <v-container grid-list-md>
+        <v-layout justify-center wrap>
+          <v-flex d-flex>
+            <v-card
+              class="card"
+              color="primary"
+              dark
+              max-width="400"
+            >
+              <v-card-title>
+                <v-icon
+                  large
+                  left
+                >
+                  stars
+                </v-icon>
+                <span class="headline font-weight-bold">Workshops</span>
+              </v-card-title>
+
+              <v-card-text class="title">
+                Join us on Saturday, June 1st for fun workshops and the social dance!
+              </v-card-text>
+
+              <v-card-actions>
+                <v-btn color="primary" class="darken-2">More Info</v-btn>
+              </v-card-actions>
+            </v-card>
+            <v-card
+              class="card"
+              color="green"
+              dark
+              max-width="400"
+            >
+              <v-card-title>
+                <v-icon
+                  large
+                  left
+                >
+                  assignment_ind
+                </v-icon>
+                <span class="headline font-weight-bold">Collegiate</span>
+              </v-card-title>
+
+              <v-card-text class="title">
+                Attention Collegiate Dancers: Click below to find <b>all</b> the forms you need to register!
+              </v-card-text>
+
+              <v-card-actions>
+                <v-btn color="green" class="darken-2">Download</v-btn>
+              </v-card-actions>
+            </v-card>
+            <v-card
+              class="card"
+              color="orange"
+              dark
+              max-width="400"
+            >
+              <v-card-title>
+                <v-icon
+                  large
+                  left
+                >
+                  alarm_on
+                </v-icon>
+                <span class="headline font-weight-bold">Schedule</span>
+              </v-card-title>
+
+              <v-card-text class="title">
+                Find your heatlist and times here!
+              </v-card-text>
+
+              <v-card-actions>
+                <v-btn color="orange" class="darken-2">Go to Page</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-flex>
   </v-layout>
 </template>
@@ -49,3 +135,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.card {
+  margin: 12px;
+}
+</style>
