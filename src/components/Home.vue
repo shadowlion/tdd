@@ -60,7 +60,7 @@
               </v-card-text>
 
               <v-card-actions>
-                <v-btn color="primary" class="darken-2">More Info</v-btn>
+                <workshop-modal />
               </v-card-actions>
             </v-card>
             <v-card
@@ -126,7 +126,12 @@
 </template>
 
 <script>
+import WorkshopModal from './WorkshopModal'
+
 export default {
+  components: {
+    WorkshopModal
+  },
   data () {
     return {
       videoId: 'UiV8FPwUChk',
