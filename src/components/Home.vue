@@ -84,7 +84,14 @@
               </v-card-text>
 
               <v-card-actions>
-                <v-btn color="green" class="darken-2">Download</v-btn>
+                <v-btn
+                  color="green"
+                  class="darken-2"
+                  href="https://firebasestorage.googleapis.com/v0/b/three-diamond-dancesport.appspot.com/o/2019%2Fdocs%2Fcollegiate_package.zip?alt=media&token=0abd1718-3a66-4427-851e-c50aab5c21de"
+                  target="_blank"
+                >
+                  Download
+                </v-btn>
               </v-card-actions>
             </v-card>
             <v-card
